@@ -8,11 +8,5 @@
       "source": "/mapa",
       "destination": "http://190.115.198.21:10014/"
     }
-  ],
-  "crons": [
-    {
-      "path": "/api/cron",
-      "schedule": "*/5 * * * *"
-    }
   ]
 }
