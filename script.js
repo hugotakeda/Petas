@@ -91,7 +91,7 @@
           
           const onlineBadge = entry.isOnline 
             ? '<span class="status-dot online" style="margin-left: 8px; box-shadow: 0 0 8px rgba(72,240,166,0.6);" title="Online agora!"></span>' 
-            : '';
+            : '<span class="status-dot" style="margin-left: 8px; background: rgba(255,255,255,0.15);" title="Offline"></span>';
 
           row.innerHTML = `
             <div class="lb-pos">#${pos}</div>
