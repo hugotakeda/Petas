@@ -88,11 +88,15 @@
           const row = document.createElement('div');
           row.className = `lb-row ${pos <= 3 ? 'top-' + pos : ''}`;
           
+          const onlineBadge = entry.isOnline 
+            ? '<span class="status-dot online" style="margin-left: 8px; box-shadow: 0 0 8px rgba(72,240,166,0.6);" title="Online agora!"></span>' 
+            : '';
+
           row.innerHTML = `
             <div class="lb-pos">#${pos}</div>
             <div class="lb-player">
               <img src="https://minotar.net/helm/${entry.member}/32.png" alt="${entry.member}" loading="lazy">
-              ${entry.member}
+              ${entry.member} ${onlineBadge}
             </div>
             <div class="lb-time">${formatPlaytime(entry.score)}</div>
           `;
