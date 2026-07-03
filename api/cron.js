@@ -10,11 +10,11 @@ export default async function handler(req, res) {
     if (data.online && data.players && data.players.list && data.players.list.length > 0) {
       const pipeline = kv.pipeline();
       
-      // 3. Para cada jogador, adiciona 5 minutos no banco (porque o cron roda a cada 5 min)
+      // 3. Para cada jogador, adiciona 1 minuto no banco (o cron roda a cada 1 min)
       for (const player of data.players.list) {
         const playerName = typeof player === 'string' ? player : player.name;
         // zIncrBy(key, increment, member)
-        pipeline.zincrby('leaderboard:playtime', 5, playerName);
+        pipeline.zincrby('leaderboard:playtime', 1, playerName);
       }
       
       await pipeline.exec();
