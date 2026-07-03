@@ -83,7 +83,8 @@
 
       if(data.success && data.data && data.data.length > 0) {
         listEl.innerHTML = '';
-        data.data.forEach((entry, index) => {
+        const top5 = data.data.slice(0, 5); // Limita aos 5 primeiros para caber no mock
+        top5.forEach((entry, index) => {
           const pos = index + 1;
           const row = document.createElement('div');
           row.className = `lb-row ${pos <= 3 ? 'top-' + pos : ''}`;
@@ -110,4 +111,3 @@
     }
   }
   loadLeaderboard();
-
